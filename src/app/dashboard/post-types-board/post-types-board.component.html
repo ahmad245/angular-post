@@ -1,0 +1,23 @@
+<div @todosAnimation class="todo">
+        <h1>Todos</h1>
+      
+          <mat-form-field  class="example-full-width"   >
+            <input required #itemInput type="text" matInput placeholder="Question Type" (keyup.enter)="addItem(itemInput)">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+      
+          <mat-nav-list *ngIf="postTypes">
+              <mat-list-item class="list-item-todo" *ngFor="let item of postTypes"  @todoAnimation
+              (@todoAnimation.start)="animationStarted($event)"
+              (@todoAnimation.done)="animationDone($event)"
+              (click)="removeItem(item)">
+                  <button  mat-icon-button class="list-group-item" >{{ item.name }}</button>
+                  <span  class="span-todo"></span>
+                  <span style="position:relative; right: 35x">
+                    <button mat-icon-button color="warn" ><mat-icon>delete_outline</mat-icon> </button>
+          
+                </span>
+              </mat-list-item>
+          
+        </mat-nav-list> 
+      </div>

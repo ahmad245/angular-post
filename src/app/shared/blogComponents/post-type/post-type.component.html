@@ -1,0 +1,4 @@
+  <mat-list role="list" *ngFor="let item of postTypes">
+                <mat-list-item [ngClass]="{'active': type===item.id}" role="listitem"><a routerLink="/" [queryParams]="{type:item.id}" class="postTypeList-link" matLine >{{item.name}}</a></mat-list-item>
+     </mat-list>
+

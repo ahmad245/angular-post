@@ -1,0 +1,96 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+       
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--btn-box-shadow-hover);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow:  var(--btn-box-shadow-active);
+    }
+    
+    &--white {
+        background-color:var(--white);
+        color: var(--grey-light-1);
+
+        &::after {
+            background-color: var(--white);
+        }
+    }
+
+    &--green {
+        background-color: var( --base-color);
+        color: var(--white);
+
+        &::after {
+            background-color: var( --base-color);
+        }
+    }
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+      
+        color: var(--base-color)!important;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid var(--base-color);
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: var(--base-color)!important;
+        color:var(--white)!important;
+        box-shadow: var(--btn-box-shadow-active);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow:var(--btn-box-shadow-active);
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,40 @@
+ /* mat-confirm-dialog (customised dialog) */
+ .confirm-dialog-container .mat-dialog-container {
+    border-radius: .25em .25em .4em .4em;
+    padding: 0px;
+}
+.confirm-dialog-container .content-container{
+    margin: 5px 5px 15px 5px;
+    color: #8f9cb5;
+    display: flex;
+}
+.confirm-dialog-container #close-icon{
+    margin-left: auto;
+    order: 2;
+    font-weight: bolder;
+}
+.confirm-dialog-container #close-icon:hover{
+cursor: pointer;
+}
+
+.confirm-dialog-container #no-button{
+height: 50px;
+width: 50%;
+background-color: #ff4081;
+color:white;
+border-radius: 0px;
+}
+
+.confirm-dialog-container #yes-button{
+    height: 50px;
+    width: 50%;
+    background-color: #b6bece;
+    color:white;
+    border-radius: 0px;
+}
+
+.confirm-dialog-container span.content-span{
+    padding:  35px 16px;
+    text-align: center;
+    font-size: 20px;
+}

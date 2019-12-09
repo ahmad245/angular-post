@@ -1,0 +1,71 @@
+$link-color: #3f51b5;
+$link-hover-color: currentColor;
+$link-hover-decoration: none;
+$label-margin-bottom: 0;
+
+$grid-breakpoints: (
+  xs: 0, // handset portrait (small, medium, large) | handset landscape (small)
+  sm: 600px, // handset landscape (medium, large) | tablet portrait(small, large)
+  md: 960px, //  tablet landscape (small, large)
+  lg: 1280px, // laptops and desktops
+  xl: 1600px // large desktops
+);
+
+$container-max-widths: (
+  sm: 600px,
+  md: 960px,
+  lg: 1280px,
+  xl: 1600px
+);
+:root{
+  --base-color:#ff4081;
+  --base-green-color: #28a745;
+  --base-2-color:#5c5a98;
+  --base-3-color:#36547b;
+  --base-4-color:#2f4858;
+  --base-5-color:#bea5a9;
+  --Light-green: #7ed56f;
+  --Medium-green: #55c57a;
+  --Dark-green: #28b485;
+
+  --body-secondary:#777;
+  --color-primary:#fff;
+  
+  --grey-light-1: #f7f7f7;
+  --grey-light-2: #eee;
+
+  --grey-dark: #777;
+  --grey-dark-2: #999;
+  --grey-dark-3: #333;
+
+  --white: #fff;
+  --white-rgba:rgba(255,255,255,.6);
+  --white-rgba-img:rgba(255,255,255,.9);
+  --black: #000;
+  --black-rgba:rgba(0,0,0,.8);
+
+  --blue-light:#2998ff;
+  --blue-dark: #5643fa;
+
+  --yellow-light: #ffb900;
+  --yellow-dark: #ff7730;
+
+  --Light-green-rgba: rgba(126,213,11,0.8); 
+  --Dark-green-rgba:rgba(40,180,131,0.8);
+  --color-primary-rgba:rgba(255,255,255,.8);
+
+  --btn-box-shadow-hover:0 1rem 2rem rgba(0,0,0,.2);
+  --btn-box-shadow-active:0 5px 10px rgba(0,0,0,.2);
+  --img-box-shadow:0 1.5rem 4rem rgba(0,0,0,.4);
+  --img-box-shadow-bg:0 2.5rem 4rem rgba(0,0,0,.4);
+  // --cart-box-shadow:0 1.5rem 4rem rgba(0,0,0,0.15);
+  // --cart-box-shadow:0 1rem 1rem rgba(0,0,0,0.4);
+  --box-shadow-input:0 1rem 2rem rgba(0,0,0,0.1);
+  --card-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+
+  // GRID
+  --grid-width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-vertical-small: 6rem;
+  --gutter-horizontal: 6rem;
+}

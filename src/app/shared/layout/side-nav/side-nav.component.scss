@@ -1,0 +1,21 @@
+.viewer-nav {
+  position: sticky;
+  // top: 250px;
+
+  &__content {
+    margin: 25px;
+    width: 240px;
+    max-height: 75vh;
+    overflow: auto;
+    background: #333;
+  }
+}
+.mat-toolbar-row, .mat-toolbar-single-row{
+  justify-content: center;
+}
+.mat-toolbar {
+  background:  #eb2f64;
+
+color: #fff;
+  
+}

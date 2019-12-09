@@ -1,0 +1,21 @@
+<mat-toolbar class="tootlbar-header">
+    <span>Roles</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+  <form class="form" (ngSubmit)="onSubmit()" [formGroup]="createForm">
+  
+  <mat-form-field>
+    <mat-select placeholder="Select me" name="roles" formControlName="roles">
+      <mat-option [value]=item.id *ngFor="let item of role">{{item.name}}</mat-option>
+    </mat-select>
+    <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+    <mat-error  >this field is required</mat-error>
+  </mat-form-field>
+  <!-- *ngIf="data.role.name!=='admin' ||data.role.name!=='user' " -->
+  
+    <mat-checkbox  name="isActive" [value]='data.isAdmin' formControlName="isAdmin"><h4 mat-line>isAdmin</h4></mat-checkbox>     
+  
+  <button type="submit" [disabled]="createForm.invalid" mat-raised-button color="accent">save</button>
+  
+  </form>

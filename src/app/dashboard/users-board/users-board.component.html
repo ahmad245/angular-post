@@ -1,0 +1,115 @@
+<div class="search-div">
+  <button (click)="openDialog()" mat-raised-button>
+    <mat-icon>add</mat-icon>create
+  </button>
+  <mat-form-field class="search-form-field">
+    <input matInput (keyup)="applyFilter()" [(ngModel)]="value" placeholder="Filter">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+</div>
+
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+<mat-table [dataSource]="listData" matSort class="mat-elevation-z8" multiTemplateDataRows>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>>
+    <mat-cell *matCellDef="let element" #ref> {{element.email }} </mat-cell>>
+  </ng-container>
+
+  <ng-container matColumnDef="blogs">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> blogs </mat-header-cell>>
+    <mat-cell *matCellDef="let element"> {{ element.blogs.title}} </mat-cell>>
+
+  </ng-container>
+  <ng-container matColumnDef="isAdmin">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> isAdmin </mat-header-cell>>
+    <mat-cell *matCellDef="let element"> {{ element.isAdmin}} </mat-cell>>
+
+  </ng-container>
+
+  <ng-container matColumnDef="roles">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> roles </mat-header-cell>>
+    <mat-cell *matCellDef="let element"> {{ element.roles.name}} </mat-cell>>
+
+  </ng-container>
+
+
+
+
+  <ng-container matColumnDef="loading">
+    <mat-footer-cell *matFooterCellDef>
+      loading...
+    </mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="nodata">
+    <mat-footer-cell *matFooterCellDef>
+      No Data...
+    </mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-icon-button (click)="update(row)">
+        <mat-icon>launch</mat-icon>
+      </button>
+
+ 
+      <button mat-icon-button color="warn" (click)="delete(row)">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="expandedDetail">
+      <mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="example-element-detail"
+             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+         
+          <div class="example-element-description">
+              <mat-chip-list aria-label="Fish selection">
+                  <mat-chip color="accent" selected *ngFor="let item of element.blogs" >{{item.title}}</mat-chip>
+                  
+              </mat-chip-list>
+  
+            <span class="example-element-description-attribution"> -- Posts </span>
+          </div>
+        </div>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let element; columns: displayedColumns;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : element">
+    </mat-row>
+
+
+  
+  <mat-row *matRowDef="let row; columns: ['expandedDetail'];" class="example-detail-row"></mat-row>
+
+
+  <mat-footer-row [ngClass]="{'hiden':listData!=null}" *matFooterRowDef="['loading']"></mat-footer-row>
+  <mat-footer-row [ngClass]="{'hiden':!(listData!=null && listData.data.length==0)}" *matFooterRowDef="['nodata']">
+  </mat-footer-row>
+
+
+</mat-table>
+
+
+
+<mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [length]="totalItem" showFirstLastButtons
+  (page)="onChangePage($event)">
+</mat-paginator>

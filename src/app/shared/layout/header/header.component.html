@@ -1,0 +1,87 @@
+<nav class="docs-navbar-header" color="accent">
+    <a class=" mat-button mat-button-base" mat-button routerlink="/" tabindex="0" aria-disabled="false" href="/">
+        <span class="mat-button-wrapper">
+           <mat-icon>event_note</mat-icon>
+            <span>Ahmad Blog</span>
+        </span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+    </a>
+    <div class="flex-spacer"></div>
+    <!---->
+    <a class="  mat-button mat-button-base " mat-button="" tabindex="0" aria-disabled="false" 
+    routerLink="">
+        <span class="mat-button-wrapper">Home</span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+    </a>
+
+    <a *appShowWriter="true" class=" mat-button mat-button-base"  mat-button tabindex="0" aria-disabled="false" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>dashboard</mat-icon>
+            <span class="mat-button-wrapper">Dashboard</span>
+          </a>
+          <mat-menu #menu="matMenu">
+                <a class=" mat-menu-item"  tabindex="0" aria-disabled="false" 
+                routerLink="/editor">
+                    <mat-icon>post_add</mat-icon>
+                    <span>New Post</span>
+                </a>
+                <a class=" mat-menu-item"  tabindex="0" aria-disabled="false" 
+                routerLink="/editor/postType">
+                    <mat-icon>playlist_add</mat-icon>
+                    <span>New Type</span>
+                </a>
+                <a class=" mat-menu-item"  tabindex="0" aria-disabled="false" 
+                routerLink="/dashboard">
+                    <mat-icon>format_list_bulleted</mat-icon>
+                    <span>Post Dashboard</span>
+                </a>
+                <a class=" mat-menu-item"  tabindex="0" aria-disabled="false" 
+                routerLink="/dashboard/users">
+                    <mat-icon>format_list_bulleted</mat-icon>
+                    <span>Users Dashboard</span>
+                </a>
+               
+                <a class=" mat-menu-item"  tabindex="0" aria-disabled="false" 
+                routerLink="/dashboard/postTypes">
+                    <mat-icon>format_list_bulleted</mat-icon>
+                    <span>PostTypes Dashboard</span>
+                </a>
+          </mat-menu>
+          
+
+
+   
+
+    <a *appShowAuthed="false" (click)="openDialog('login')" class=" mat-button mat-button-base "   mat-button="" tabindex="0" aria-disabled="false">
+        <span class="mat-button-wrapper">Sign in</span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+    </a>
+    <a *appShowAuthed="false" (click)="openDialog('register')" class="  mat-button mat-button-base"  mat-button routerlink="guides" tabindex="0" aria-disabled="false"
+        >
+        <span class="mat-button-wrapper">Sign up</span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+    </a>
+    
+
+    <a *appShowAuthed="true" routerLink="/settings" aria-label="GitHub Repository" class="  mat-button mat-button-base" 
+        mat-button tabindex="0" aria-disabled="false">
+        <mat-icon>settings_applications</mat-icon>
+        <span class="mat-button-wrapper">Settings </span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+    </a>
+
+    <a *appShowAuthed="true"  routerLink="/profile/username" aria-label="GitHub Repository" class="  mat-button mat-button-base" 
+    mat-button tabindex="0" aria-disabled="false">
+    <mat-icon>account_circle</mat-icon>
+    <span class="mat-button-wrapper">{{currentUser.email}} </span>
+    <div class="mat-button-ripple mat-ripple" matripple=""></div>
+    <div class="mat-button-focus-overlay"></div>
+</a>
+
+</nav>
+
+

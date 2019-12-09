@@ -1,0 +1,31 @@
+.editor{
+  margin-top: 5rem;
+}
+.text-xs-center {
+  text-align: center;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.editor-form{
+ 
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+  align-items: center;
+}
+.editor-form>*{
+  width: 60%;
+}
+.example-container>*{
+  width: 100%;
+}
+
+
+.button-row{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}

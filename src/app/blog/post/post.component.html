@@ -1,0 +1,118 @@
+<div class="article-page">
+
+  <div class="banner">
+    <div class="container ">
+      <h1> {{post.title}} </h1>
+      <div class="banner-meta">
+
+        <app-post-meta [post]="post"></app-post-meta>
+        <div class="button-row">
+          <a   [routerLink]="['/editor', post.id]" mat-raised-button color="accent">
+            <mat-icon>edit</mat-icon> Edit Post
+          </a>
+          <button  mat-raised-button color="warn">
+            <mat-icon>delete</mat-icon>Delete Post
+          </button>
+        </div>
+        <app-like-button class="bl"></app-like-button>
+      </div>
+
+ 
+    </div>
+  </div>
+
+  <div class="container page">
+
+    <div class="row article-content">
+      <div class="col-xs-12 col-md-8 offset-md-2 my-2">
+        <p> {{post.description}} </p>
+        <quill-view-html [content]="post.text" theme="snow"></quill-view-html>
+      </div>
+      <div class="col-xs-12 col-md-8 offset-md-2 my-2">
+        <mat-chip-list aria-label="Fish selection">
+                <mat-chip color="accent" selected>tag 1</mat-chip>
+                <mat-chip color="accent" selected>tag 2</mat-chip>
+                <mat-chip color="accent" selected>tag 3</mat-chip>
+                <mat-chip color="accent" selected>tag 4</mat-chip>
+            </mat-chip-list>
+          </div>
+    
+    </div>
+
+    
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2  my-2">
+
+
+        <!-- *appShowAuthed="true" -->
+        <div>
+
+          <!-- <app-list-errors [errors]="commentFormErrors"></app-list-errors> -->
+          <form class="card comment-form">
+            <!-- [disabled]="isSubmitting" -->
+            <fieldset>
+              <div class="card-block">
+                <textarea class="form-control" placeholder="Write a comment..." rows="3"></textarea>
+              </div>
+              <div class="card-footer">
+                <!-- [src]="currentUser.image" -->
+                <mat-icon color="accent">tag_faces</mat-icon>
+                <span class="space"></span>
+                <button mat-raised-button color="accent" type="submit">
+                  <mat-icon>add_comment</mat-icon>
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <!-- *appShowAuthed="false" -->
+        <div>
+          <a [routerLink]="['/login']">Sign in</a> or <a [routerLink]="['/register']">sign up</a> to add comments on
+          this article.
+        </div>
+        <app-comment></app-comment>
+        <!-- <app-article-comment
+            *ngFor="let comment of comments"
+            [comment]="comment"
+            (deleteComment)="onDeleteComment(comment)">
+          </app-article-comment> -->
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+     <!-- <app-article-meta [article]="article">
+  
+            <span [hidden]="!canModify">
+            <a class="btn btn-sm btn-outline-secondary"
+               [routerLink]="['/editor', article.slug]">
+              <i class="ion-edit"></i> Edit Article
+            </a>
+  
+            <button class="btn btn-sm btn-outline-danger"
+              [ngClass]="{disabled: isDeleting}"
+              (click)="deleteArticle()">
+              <i class="ion-trash-a"></i> Delete Article
+            </button>
+          </span>
+  
+          <span [hidden]="canModify">
+            <app-follow-button
+              [profile]="article.author"
+              (toggle)="onToggleFollowing($event)">
+            </app-follow-button>
+  
+            <app-favorite-button
+              [article]="article"
+              (toggle)="onToggleFavorite($event)">
+              {{ article.favorited ? 'Unfavorite' : 'Favorite' }} Article <span class="counter">({{ article.favoritesCount }})</span>
+            </app-favorite-button>
+          </span>
+  
+        </app-article-meta> -->

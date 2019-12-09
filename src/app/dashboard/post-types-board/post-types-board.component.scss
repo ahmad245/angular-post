@@ -1,0 +1,17 @@
+.todo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.todo >*{
+ width: 50%;
+}
+.list-item-todo{
+    display: flex;
+
+}
+.span-todo{
+    flex-flow: 1;
+}

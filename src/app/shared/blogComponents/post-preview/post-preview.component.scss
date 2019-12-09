@@ -1,0 +1,49 @@
+.article-preview {
+
+  margin: .5rem;
+  margin-bottom: 2rem;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.img-card {
+  height: 3rem;
+
+}
+
+.img-card-body {
+  height: 100%;
+}
+
+.card {
+  min-height: 18rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  box-shadow:var(--card-box-shadow);
+  margin: 2rem 0;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grow {
+  flex-grow: 1;
+}
+.preview-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.preview-link >*{
+  margin: .5rem 0;
+ }
+ .btn-text{
+   align-self: flex-start;
+ }

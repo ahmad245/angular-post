@@ -1,0 +1,19 @@
+.settings-page{
+    margin-top: 5rem;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container>* {
+  width: 100%;
+}
+
+.text-xs-center {
+  text-align: center;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-block">
+      <p class="card-text">
+     comment.body 
+      </p>
+    </div>
+    <div class="card-footer">
+            <!-- [routerLink]="['/profile', comment.author.username]" -->
+       <div class="comment-auth-info">
+          <a class="comment-author">
+              <!-- [src]="comment.author.image" -->
+              <mat-icon color="accent">tag_faces</mat-icon>
+            </a>
+            &nbsp;
+            <!-- [routerLink]="['/profile', comment.author.username]" -->
+            <a class="comment-author" >
+               comment.author.username 
+            </a>
+            <span class="date-posted">
+               comment.createdAt | date: 'longDate' 
+               </span>
+       </div>     
+      
+      <!-- [hidden]="!canModify" -->
+      
+            <!-- (click)="deleteClicked()" -->
+       
+      <span class="space"></span>
+      <button mat-raised-button color="warn" type="submit">
+        <mat-icon >delete</mat-icon>
+      </button>
+    </div>
+  </div>

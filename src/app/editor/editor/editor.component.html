@@ -1,0 +1,66 @@
+<div class="editor container">
+        <div class="row">
+                <div class="col-md-6 offset-md-3 col-xs-12">
+    
+                    <h1 class="text-xs-center">Create Your Post</h1>
+                </div>
+        </div>
+                    
+    <form class="editor-form"[formGroup]="createForm" (ngSubmit)="onSubmit()">
+            
+            <mat-form-field>
+              <mat-label>Post Type</mat-label>
+              <mat-select formControlName="blogType" required>
+                <mat-option>--</mat-option>
+                <mat-option #blogType *ngFor="let item of postTypes" [value]="item.id">
+                  {{item.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="createForm.controls['blogType'].hasError('required')">Please choose an animal</mat-error>
+              <!-- <mat-hint>{{blogType.value?.sound}}</mat-hint> -->
+            </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Post Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="What's this post about ?" formControlName="description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Auther Name" formControlName="auther">
+        </mat-form-field>
+
+        <div class="quill">
+            <quill-editor
+           
+            class="quill" formControlName="text"> 
+         
+        </quill-editor>
+        </div>
+
+        <h3>Choose File</h3>
+        <input type="file" name="image" (change)="fileProgress($event)" formControlName="imgUrl" />
+        <div *ngIf="fileUploadProgress">
+                Upload progress: {{ fileUploadProgress }}
+            </div>
+            <div class="image-preview mb-3" *ngIf="previewUrl">
+                <img [src]="previewUrl" height="300" />                
+            </div>
+            <div class="mb-3" *ngIf="uploadedFilePath">
+                    {{uploadedFilePath}}
+                </div>
+
+               
+
+         <mat-form-field>
+            <input matInput placeholder="Slug" formControlName="slug">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Tags" formControlName="tags">
+        </mat-form-field>
+        <mat-checkbox formControlName="isPublish">Is Publishid!</mat-checkbox>
+
+        <div class="button-row">
+            <button mat-raised-button color="accent">Publish</button>
+        </div>
+    </form>
+</div>

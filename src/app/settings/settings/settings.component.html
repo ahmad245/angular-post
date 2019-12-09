@@ -1,0 +1,88 @@
+<div class="settings-page">
+    <div class="container page">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-xs-12">
+
+                <h1 class="text-xs-center">Your Settings</h1>
+                <!-- <app-list-errors [errors]="errors"></app-list-errors> -->
+                <form class="form" (ngSubmit)="onSubmit()" [formGroup]="createForm">
+
+                    <fieldset [disabled]="isSubmitting">
+                        <div class="example-container">
+                            <!-- ///////////////url image//////////////// -->
+                            <mat-form-field hintLabel="Max 10 characters">
+                                <input matInput #urlImg placeholder="URL of profile picture" formControlName="urlImg">
+                                <mat-hint align="end">{{name.value?.length || 0}}/255</mat-hint>
+
+                                <mat-error *ngIf="createForm.controls['urlImg'].errors?.minlength">Minimum 3 charactor
+                                </mat-error>
+                                <mat-error *ngIf="createForm.controls['urlImg'].errors?.required">this field is required
+                                </mat-error>
+
+                            </mat-form-field>
+                            <!-- /////////////////////////////////////////NAME////////////////////////////////////////////////// -->
+                            <mat-form-field hintLabel="Max 10 characters">
+                                <input matInput #name placeholder="Enter Your Name*" formControlName="name">
+                                <mat-hint align="end">{{name.value?.length || 0}}/255</mat-hint>
+
+                                <mat-error *ngIf="createForm.controls['name'].errors?.minlength">Minimum 3 charactor
+                                </mat-error>
+                                <mat-error *ngIf="createForm.controls['name'].errors?.required">this field is required
+                                </mat-error>
+
+                            </mat-form-field>
+                            <!-- /////////////////////////////////////////bio////////////////////////////////////////////////// -->
+
+                            <mat-form-field hintLabel="Max 10 characters">
+
+                                <textarea matInput placeholder="Textarea" formControlName="bio"></textarea>
+
+
+                            </mat-form-field>
+                            <!-- /////////////////////////////////////////EMAIL(UserNAME)////////////////////////////////////////////////// -->
+
+                            <mat-form-field hintLabel="Max 10 characters">
+                                <input matInput #email placeholder="Enter Your Email*" formControlName="username">
+                                <mat-hint align="end">{{email.value?.length || 0}}/255</mat-hint>
+
+                                <mat-error *ngIf="createForm.controls['username'].errors?.minlength">Minimum 3 charactor
+                                </mat-error>
+                                <mat-error *ngIf="createForm.controls['username'].errors?.required">this field is
+                                    required
+                                </mat-error>
+                                <mat-error *ngIf="createForm.controls['username'].errors?.email">Email not valid
+                                </mat-error>
+
+                            </mat-form-field>
+                            <!-- /////////////////////////////////////////PASSWORD////////////////////////////////////////////////// -->
+
+                            <mat-form-field hintLabel="Max 10 characters">
+                                <input matInput [type]="hide ? 'password' : 'text'" #password
+                                    placeholder="Enter Your password*" formControlName="password">
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+                                </mat-icon>
+                                <mat-hint align="end">{{password.value?.length || 0}}/255</mat-hint>
+                                <mat-error *ngIf="createForm.controls['password'].errors?.minlength">Minimum 3 charactor
+                                </mat-error>
+                                <mat-error *ngIf="createForm.controls['password'].errors?.required">this field is
+                                    required
+                                </mat-error>
+                            </mat-form-field>
+
+
+
+
+
+                        </div>
+                    </fieldset>
+                    <button type="submit" [disabled]="createForm.invalid" mat-raised-button color="accent">Update
+                        Settings</button>
+                    <!-- Line break for logout button -->
+                    <hr />
+                    <button mat-raised-button color="warn" (click)="logout()"> Or click here to logout.</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

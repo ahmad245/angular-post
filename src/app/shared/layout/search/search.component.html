@@ -1,0 +1,25 @@
+<form class="form"  [formGroup]="createForm"(ngSubmit)="onSubmit()">
+                
+                <fieldset [disabled]="isSubmitting">
+                <div class="example-container">
+                   
+                    <!-- /////////////////////////////////////////NAME////////////////////////////////////////////////// -->
+                    <mat-form-field hintLabel="Max 10 characters">
+                        <input matInput #name placeholder="Enter Your Name*" formControlName="name">
+                        <mat-hint align="end">{{name.value?.length || 0}}/255</mat-hint>
+
+                        <mat-error *ngIf="createForm.controls['name'].errors?.minlength">Minimum 3 charactor
+                        </mat-error>
+                        <mat-error *ngIf="createForm.controls['name'].errors?.required">this field is required
+                        </mat-error>
+
+                    </mat-form-field>
+                   
+
+                
+
+                </div>
+            </fieldset>
+                <button type="submit"  [disabled]="createForm.invalid" mat-raised-button
+                    color="accent">Search</button>
+            </form>

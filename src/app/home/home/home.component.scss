@@ -1,0 +1,199 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, .3), inset 0 -8px 8px -8px rgba(0, 0, 0, .3);
+
+  // margin-top: 53.6px;
+  position: relative;
+  background: #000200;
+  overflow: hidden;
+
+}
+
+.banner h1 {
+  text-transform: uppercase;
+  color: transparent;
+  // color: #ff4081;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  font-weight: 900 !important;
+  text-align: center;
+  font-size: 4rem;
+
+  margin: 1rem;
+  -webkit-text-stroke: 2px #ff4081;
+
+  animation:bounce 0.2s ease 0.9s;
+  animation-fill-mode: forwards;
+}
+
+ h1 span{
+  transform-origin: bottom center;
+  transform: scale(0);
+  display: inline-block;
+  
+  
+}
+.banner  h1 span:nth-child(1){
+  animation: scaleText 0.1s linear;
+  animation-fill-mode: forwards;
+ 
+}
+.banner h1 span:nth-child(2){
+  animation: scaleText 0.2s linear 0.3s;
+  animation-fill-mode: forwards;
+}
+.banner p {
+  background-image: linear-gradient(to right left, #ff4081, #faaebd);
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300 !important;
+  margin: 1rem;
+
+  animation :knock 0.1s linear 0.8s;
+  animation-fill-mode: forwards;
+  transform: translateY(1rem);
+  opacity: 0;
+}
+
+.banner .star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: animate 8s ease-in-out infinite,
+    backgroundMove 16s linear infinite;
+    overflow: hidden;
+
+}
+
+.banner .star1 {
+  animation-delay: 0s;
+  background-image: url('../../../assets/img/star1.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.banner .star2 {
+  animation-delay: -1s;
+  background-image: url('../../../assets/img/star2.png');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.banner .star3 {
+  background-image: url('../../../assets/img/star3.png');
+  background-size: cover;
+  background-position: center;
+  animation-delay: -2s;
+  overflow: hidden;
+}
+
+.banner .star4 {
+  background-image: url('../../../assets/img/star4.png');
+  background-size: cover;
+  background-position: center;
+  animation-delay: -3s;
+  overflow: hidden;
+}
+
+.banner .star5 {
+  background-image: url('../../../assets/img/star5.png');
+  background-size: cover;
+  background-position: center;
+  animation-delay: -4s;
+  overflow: hidden;
+}
+
+.banner .star6 {
+  background-image: url('../../../assets/img/star6.png');
+  background-size: cover;
+  background-position: center;
+  animation-delay: -5s;
+  overflow: hidden;
+}
+
+.banner .star7 {
+  background-image: url('../../../assets/img/star7.png');
+  background-size: cover;
+  background-position: center;
+  animation-delay: -6s;
+  overflow: hidden;
+}
+
+.banner .star8 {
+  background-image: url('../../../assets/img/star8.png');
+  background-size: cover;
+  background-position: center;
+  animation-delay: -7s;
+  overflow: hidden;
+}
+
+@keyframes animate {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundMove {
+
+  0%
+   {
+   transform: scale(1);
+  }
+
+  100%
+   {
+    transform: scale(2);
+  }
+}
+
+@keyframes scaleText{
+  0%
+  {transform: scaleY(0);}
+  100%
+  {transform: scaleY(1);}
+}
+
+@keyframes bounce{
+  0%{transform:translateY(0);}
+  50%{transform: translateY(-1rem)}
+  100%{transform: translateY(0)}
+}
+
+@keyframes knock{
+  0%{transform:translateY(1rem);}
+  100%{transform: translateY(0);opacity: 1;}
+}
+
+::ng-deep .mat-ink-bar {
+  background-color:#ff4081 !important;}
+
+  .post-item{
+    height: 3rem;
+  }

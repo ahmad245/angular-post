@@ -1,0 +1,64 @@
+<div class="profile-page">
+
+    <div class="banner-user-info">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 offset-md-4">
+                <!-- [src]="profile.image" -->
+                <div class="profile-user">
+                    <div class="cover">
+                       <a href=""><img src="./../../../assets//img//ah.jpg" class="user-img" /></a> 
+                    </div>
+                    <div class="hover">
+                        <div class="hover-cover real"></div>
+                        <div class="hover-info">
+                                <img src="./../../../assets//img//ah.jpg" class="user-img" />
+                                <h4> profile.username </h4>
+                                <p class="bio" > profile.bio </p>
+                        </div>
+                      
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10 offset-md-1">
+                <div class="user-info-meta">
+                    <a routerLink="/settings" aria-label="GitHub Repository" class="  mat-button mat-button-base"
+                        mat-button tabindex="0" aria-disabled="false">
+                        <mat-icon>settings_applications</mat-icon>
+                        <span class="mat-button-wrapper">Settings </span>
+                        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                        <div class="mat-button-focus-overlay"></div>
+                    </a>
+                    <app-like-button class="bl"></app-like-button>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row margin-auto">
+
+            <div class="col-xs-12 col-md-7 mx-auto">
+
+                <mat-tab-group>
+                    <mat-tab color="accent" label="My Posts">
+                        <app-profile-posts></app-profile-posts>
+                    </mat-tab>
+                    <mat-tab label=" Favorited Posts ">
+                        <app-profile-favorites></app-profile-favorites>
+                    </mat-tab>
+
+                </mat-tab-group>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,37 @@
+.mat-list-base .mat-list-item {
+    color: #fff;
+    position: relative;
+    // margin-bottom: .5rem;
+    cursor: pointer;
+  }
+  
+  .mat-list-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background: #eb2f64;
+    transform: scaleY(0);
+    transition: transform .2s,
+      width .4s cubic-bezier(1, 0, 0, 1) .2s,
+      background-color .1s;
+  }
+  
+  .mat-list-item:hover::before {
+    transform: scaleY(1);
+    width: 100%;
+  
+  }
+  
+  .mat-list-item:active::before {
+    background-color: #FF3366;
+  
+  }
+  .postTypeList-link{
+    color: #fff !important;
+  }
+  .active{
+    background-color: #FF3366;
+  }

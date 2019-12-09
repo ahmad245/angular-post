@@ -1,0 +1,33 @@
+<div class="editor container">
+        <div class="row">
+                <div class="col-md-6 offset-md-3 col-xs-12">
+    
+                    <h1 class="text-xs-center">Create Your Post Type</h1>
+                </div>
+        </div>
+              
+        <form class="editor-form" (ngSubmit)="onSubmit()" [formGroup]="createForm">
+                
+                <fieldset [disabled]="isSubmitting">
+                <div class="example-container">
+                   
+                    <!-- /////////////////////////////////////////NAME////////////////////////////////////////////////// -->
+                    <mat-form-field hintLabel="Max 10 characters">
+                        <input matInput #name placeholder="Enter Your Post Type Name*" formControlName="name">
+                        <mat-hint align="end">{{name.value?.length || 0}}/255</mat-hint>
+
+                        <mat-error *ngIf="createForm.controls['name'].errors?.minlength">Minimum 3 charactor
+                        </mat-error>
+                        <mat-error *ngIf="createForm.controls['name'].errors?.required">this field is required
+                        </mat-error>
+
+                    </mat-form-field>
+
+                </div>
+            </fieldset>
+            <div class="button-row">
+                <button  type="submit" [disabled]="createForm.invalid" mat-raised-button
+                    color="accent">{{createForm.value._id!==""?'update':'save'}}</button>
+                </div>
+            </form>
+</div>
